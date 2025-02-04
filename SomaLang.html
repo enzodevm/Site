@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SomaLang - Linguagem de Soma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>SomaLang</h1>
+    <p>Digite dois números para somá-los:</p>
+    <input type="number" id="numero1" placeholder="Digite o primeiro número">
+    <input type="number" id="numero2" placeholder="Digite o segundo número">
+    <button onclick="calcularSoma()">Somar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularSoma() {
+            // Obtem os valores dos inputs
+            const numero1 = parseFloat(document.getElementById("numero1").value);
+            const numero2 = parseFloat(document.getElementById("numero2").value);
+            
+            // Verifica se os números são válidos
+            if (isNaN(numero1) || isNaN(numero2)) {
+                document.getElementById("resultado").innerText = "Por favor, digite dois números válidos.";
+                document.getElementById("resultado").style.color = "red";
+            } else {
+                // Calcula a soma e exibe o resultado
+                const soma = numero1 + numero2;
+                document.getElementById("resultado").innerText = `Resultado: ${soma}`;
+                document.getElementById("resultado").style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>
